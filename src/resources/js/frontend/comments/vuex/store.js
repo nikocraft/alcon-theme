@@ -134,33 +134,35 @@ export const store = new Vuex.Store({
 
             state.postingComment = true
 
-            return axios.post(route('frontend.comments.store'), commentData)
-                .then((response) => {
-                    state.postingComment = false
-                    state.commentPosted = true
-                    state.replyToComment = null
-                    state.replyingToComment = false
-                    let comment = response.data.comment
+            return new Promise((resolve, reject) => {
+                axios.post(route('frontend.comments.store'), commentData)
+                    .then((response) => {
+                        state.postingComment = false
+                        state.commentPosted = true
+                        state.replyToComment = null
+                        state.replyingToComment = false
+                        let comment = response.data.comment
 
-                    let authorId = null
-                    if(comment.author) {
-                        authorId = comment.author.id
-                    }
+                        let authorId = null
+                        if(comment.author) {
+                            authorId = comment.author.id
+                        }
 
-                    commit('ADD_COMMENT', {
-                        id: comment.id,
-                        authorId: authorId,
-                        name: comment.name,
-                        email: comment.email,
-                        body: comment.body,
-                        parent: comment.parent_id ? comment.parent_id : null,
-                        status: comment.status,
-                        created_at: comment.created_at
+                        commit('ADD_COMMENT', {
+                            id: comment.id,
+                            authorId: authorId,
+                            name: comment.name,
+                            email: comment.email,
+                            body: comment.body,
+                            parent: comment.parent_id ? comment.parent_id : null,
+                            status: comment.status,
+                            created_at: comment.created_at
+                        })
                     })
-                })
-                .catch((error) => {
-                    console.log(error)
-                })
+                    .catch((error) => {
+                        console.log(error)
+                    })
+            })
         },
         fetchComments({ commit, getters, state }, payload) {
             let { contentId, order = 'asc', contentAuthorId } = payload

@@ -1,19 +1,21 @@
 <template>
     <div class="comment">
-        <div class="comment-header">
-            <span v-if="comment.authorId == contentAuthorId" class="comment-author">{{comment.name}}</span>
-            <span v-else-if="comment.authorId" class="comment-member">{{comment.name}}</span>
-            <span v-else class="comment-name">{{comment.name}}</span>
-            <span v-localdate :format="'yyyy-MM-dd'" class="comment-datetime">{{comment.created_at}}</span>
-        </div>
+        <div class="parent-comment">
+            <div class="comment-header">
+                <span v-if="comment.authorId == contentAuthorId" class="comment-author">{{comment.name}}</span>
+                <span v-else-if="comment.authorId" class="comment-member">{{comment.name}}</span>
+                <span v-else class="comment-name">{{comment.name}}</span>
+                <span v-localdate :format="'yyyy-MM-dd'" class="comment-datetime">{{comment.created_at}}</span>
+            </div>
 
-        <div class="comment-body">
-            {{comment.body}}
-        </div>
+            <div class="comment-body">
+                {{comment.body}}
+            </div>
 
-        <div class="comment-footer">
-            <a v-if="allowNested && maxDepth >= currentDepth" class="comment-reply" @click="replyBox(comment.id)">{{ replyBtnText(comment.id) }}</a>
-            <comment-box v-if="showReplyBox(comment.id)" :comment-id="comment.id"></comment-box>
+            <div class="comment-footer">
+                <a v-if="allowNested && maxDepth >= currentDepth" class="comment-reply" @click="replyBox(comment.id)">{{ replyBtnText(comment.id) }}</a>
+                <comment-box v-if="showReplyBox(comment.id)" :comment-id="comment.id"></comment-box>
+            </div>
         </div>
 
         <div v-if="comment.status==2" style="font-weight: bold;">This comment is pending approval.</div>

@@ -3,7 +3,7 @@
     "releases_url"      : "https://github.com/laraone/ikigai/raw/master/releases.json",
     "download_url"      : "https://github.com/laraone/ikigai/releases/download",
     "namespace"         : "com.reimaginedworks.ikigai",
-    "version"           : "1.0.1",
+    "version"           : "1.1.0",
     "folder"            : "ikigai",
     "tags"              : [ "minimalistic", "clean", "modern", "blog" ],
     "author"            : "Niko Craft",
@@ -327,6 +327,34 @@
                             ]
                         }
                     ]
+                }
+            ]
+        },
+        {
+            "label": "Syntax Highlighter",
+            "key": "syntaxHighlighter",
+            "type": "section",
+            "settings": [
+                {
+                    "label": "Enable Highlighter",
+                    "key": "enabled",
+                    "default": true,
+                    "type": "boolean",
+                    "meta": { "uiType": "boolSelect" }
+                },
+                {
+                    "label": "Theme",
+                    "key": "theme",
+                    "default": "okaidia",
+                    "type": "string",
+                    "meta": { "uiType": "select", "options": ["coy", "dark", "funky", "okaidia", "solarizedlight", "tomorrow", "twilight"], "dependency": { "on": "enabled" } }
+                },
+                {
+                    "label": "Line Numbers",
+                    "key": "lineNumbers",
+                    "default": true,
+                    "type": "boolean",
+                    "meta": { "uiType": "boolSelect" }
                 }
             ]
         },

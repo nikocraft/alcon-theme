@@ -3,7 +3,13 @@
         <div class="comment-form">
             <div class="comment-box-header">
                 <h3>Leave a Reply</h3>
-                <div>Your email address will not be published. Required fields are marked *</div>
+                <div class="comment-box-header-info">Your email address will not be published. Required fields are marked *</div>
+            </div>
+
+            <div class="comment-body">
+                <label for="body">Comment</label> *
+                <textarea v-validate="'required'" data-vv-as="Comment" name="body" class="form-input" v-model="body"></textarea>
+                <span>{{ errors.first('body') }}</span>
             </div>
 
             <div v-if="!loggedUser" class="comment-data">
@@ -18,26 +24,15 @@
                     <input v-validate="'required|email'" data-vv-as="Email" name="email" type="text" class="form-input" v-model="email">
                     <span>{{ errors.first('email') }}</span>
                 </div>
-
-                <div class="comment-data-item">
-                    <label for="website">Website</label>
-                    <input type="text" name="website" class="form-input" v-model="website">
-                </div>
             </div>
 
-            <div class="comment-body">
-                <div><label for="body">Comment</label> <span>*</span></div>
-                <textarea v-validate="'required'" data-vv-as="Comment" name="body" class="form-input" v-model="body"></textarea>
-                <span>{{ errors.first('body') }}</span>
-            </div>
+            <div v-if="successfulPost" style="text-align: center;">Comment successfully posted. Comment may need to be moderated before appearing.</div>
+            <div v-if="errorStatus" style="text-align: center; color: #ff4a57;">Server responded with an error, the comment could not be posted.</div>
 
             <div class="comment-btn">
-                <button @click="comment()" type="submit" name="button" class="btn btn-primary">Comment</button>
+                <button v-if="!postingOngoing" @click="submit()" type="submit" name="button" class="btn btn-primary">Post Comment</button>
+                <button v-else name="button" class="btn btn-primary">Posting...</button>
             </div>
-        </div>
-
-        <div v-if="showPostAnimation(comment.id)" class="spinner">
-            <div class="lds-dual-ring"></div>
         </div>
     </div>
 </template>
@@ -51,7 +46,9 @@
                 name: '',
                 email: '',
                 body: '',
-                website: ''
+                errorStatus: false,
+                successfulPost: false,
+                postingOngoing: false
             }
         },
         props: {
@@ -81,29 +78,42 @@
             ...mapActions([
                 'postComment'
             ]),
-            comment(commentId) {
-                let comment = {
-                    name: this.name,
-                    email: this.email,
-                    body: this.body,
-                    website: this.website
-                }
-                this.postComment(comment)
-                    .then(() => {
-                        this.name = ''
-                        this.email = ''
-                        this.body = ''
-                        this.website = ''
-                    })
+            submit(commentId) {
+                this.$validator.validateAll().then((result) =>{
+                    if(result) {
+                        this.postingOngoing = true
+                        this.successfulPost = false
+                        this.errorStatus = false
+                        let payload = {
+                            name: this.name,
+                            email: this.email,
+                            body: this.body,
+                        }
+                        this.postComment(payload)
+                            .then(() => {
+                                this.name = ''
+                                this.email = ''
+                                this.body = ''
+                                this.postingOngoing = false
+                                this.successfulPost = true
+
+                                this.$nextTick(() => {
+                                    this.errors.clear();
+                                    this.$nextTick(() => {
+                                        this.$validator.reset();
+                                    });
+                                });
+                            })
+                            .catch((error) => {
+                                this.postingOngoing = false
+                                this.successfulPost = false
+                                this.errorStatus = error.response.status
+                            })
+                    } else {
+                        this.successfulPost = false
+                    }
+                })
             },
-            showPostAnimation() {
-                if(this.replyToComment == this.commentId && this.postingComment)
-                    return true
-                else
-                    return false
-            },
-        },
-        mounted: function() {
         }
     }
 </script>

@@ -1,0 +1,23 @@
+.error-wrap {
+    flex: 1;
+    padding-top: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+.error-title {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    color: $bodyTextColor;
+    font-size: 160px;
+    font-weight: 700;
+    line-height: 123px;
+    text-shadow: 6px 5px 0px rgba(0, 0, 0, 0.26);
+}
+
+.error-message {
+    text-align: center;
+    color: $bodyTextColor;
+}
