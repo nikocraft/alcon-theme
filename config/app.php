@@ -39,7 +39,7 @@ return [
     |
     */
 
-    'production' => false,
+    'env' => 'development',
 
     /*
     |--------------------------------------------------------------------------
@@ -54,8 +54,6 @@ return [
 
     'providers' => [
         App\Providers\AppServiceProvider::class,
-        Illuminate\Validation\ValidationServiceProvider::class,
-        Illuminate\Translation\TranslationServiceProvider::class,
         laraone\themedev\ThemeDevServiceProvider::class
     ],
 
@@ -67,6 +65,6 @@ return [
     | Relative path where Phoenix is, used to sync the themes while developing
     |
     */
-    'phoenix_path' => env('PHOENIX_PATH', '../phoenix'),
+    'phoenix_path' => env('PHOENIX_PATH', '../laraone'),
 
 ];
