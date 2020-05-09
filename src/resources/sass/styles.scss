@@ -11,16 +11,15 @@
 @import "_variables";
 
 // theme styles
-@import "container";
-@import "layout";
-@import "common";
-@import "headlines";
-@import "navigation";
-@import "logo";
-@import "pagination";
-@import "widgets";
-@import "content";
-@import "comments";
-
-// cms blocks
-@import "blocks";
+@import "theme/container";
+@import "theme/layout";
+@import "theme/common";
+@import "theme/headlines";
+@import "theme/navigation";
+@import "theme/logo";
+@import "theme/pagination";
+@import "theme/widgets";
+@import "theme/content";
+@import "theme/comments";
+@import "theme/blocks";
+@import "theme/errors";

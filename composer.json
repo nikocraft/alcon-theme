@@ -5,14 +5,13 @@
     "homepage": "https://laraone.com",
     "type": "project",
     "require": {
-        "php": "^7.1.3",
-        "illuminate/validation": "^5.8",
-        "laraone/themedev": "^1.0",
-        "laravel-zero/framework": "5.8.*"
+        "php": "^7.2.5",
+        "laravel-zero/framework": "^7.0",
+        "laraone/themedev": "^1.0"
     },
     "require-dev": {
-        "mockery/mockery": "^1.0",
-        "phpunit/phpunit": "^7.5"
+        "mockery/mockery": "^1.3.1",
+        "phpunit/phpunit": "^8.5"
     },
     "autoload": {
         "psr-4": {

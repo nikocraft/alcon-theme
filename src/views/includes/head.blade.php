@@ -43,6 +43,13 @@
 @endforeach
 <!-- Theme Icon Resource End -->
 
+@if(get_theme_setting('syntaxHighlighter.enabled'))
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/themes/prism-{{get_theme_setting('syntaxHighlighter.theme')}}.min.css" rel="stylesheet" />
+    @if(get_theme_setting('syntaxHighlighter.lineNumbers'))
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.20.0/plugins/line-numbers/prism-line-numbers.min.css" rel="stylesheet" />
+    @endif
+@endif
+
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
 
 <!-- Theme Stylesheet -->
