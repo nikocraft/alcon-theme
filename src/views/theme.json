@@ -3,7 +3,7 @@
     "releases_url"      : "https://github.com/laraone/ikigai/raw/master/releases.json",
     "download_url"      : "https://github.com/laraone/ikigai/releases/download",
     "namespace"         : "com.reimaginedworks.ikigai",
-    "version"           : "1.1.0",
+    "version"           : "1.1.1",
     "folder"            : "ikigai",
     "tags"              : [ "minimalistic", "clean", "modern", "blog" ],
     "author"            : "Niko Craft",
