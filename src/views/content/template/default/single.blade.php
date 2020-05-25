@@ -50,7 +50,7 @@
 
     @if($showAuthorBio)
         <div class="post-author">
-            <div class="post-author-image"><img style="width: 120px;" class="img-responsive" src="{{ get_gravatar($content->author->email) }}" /></div>
+            <div class="post-author-image"><img style="width: 120px;" class="img-responsive" src="{{ get_gravatar($content->author->email, 120, 'mp') }}" /></div>
             <div class="post-author-details">
                 @if(get_website_setting('website.members.userDisplayName') == 'fullname')
                     <div class="post-author-name">About {{ $content->author->firstname }} {{ $content->author->lastname }}</div>
