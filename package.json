@@ -1,7 +1,7 @@
 {
-  "name": "ikigai",
-  "version": "1.0.1",
-  "description": "Ikigai default Laraone theme",
+  "name": "alcon",
+  "version": "1.2.0",
+  "description": "Alcon",
   "author": "Niko Craft, Reimagined Works",
   "license": "MIT",
   "scripts": {
@@ -15,7 +15,7 @@
     "animate.css": "^3.7.2",
     "axios": "^0.18.0",
     "date-fns": "2.8.0",
-    "lodash": "^4.17.4",
+    "lodash": "^4.17.20",
     "medium-zoom": "1.0.4",
     "vee-validate": "^2.0.3",
     "vue": "^2.5.17",
@@ -26,7 +26,7 @@
     "bootstrap-sass": "^3.3.7",
     "clean-webpack-plugin": "^3.0.0",
     "cross-env": "^5.1",
-    "laravel-mix": "^5.0.0",
+    "laravel-mix": "^5.0.5",
     "node-sass": "^4.14.1",
     "resolve-url-loader": "^2.3.1",
     "sass": "^1.26.5",
