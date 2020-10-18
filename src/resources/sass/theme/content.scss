@@ -93,6 +93,29 @@
             }
         }
     }
+
+    .projects {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        .post {
+            padding: 12px;
+            border: 1px solid darkgrey;
+            min-width: 346px;
+            @include post-mixin;
+
+            .post-excerpt {
+                margin: 5px 0 10px 0;
+            }
+            
+            .post-footer {
+                display: flex;
+                justify-content: space-between;
+            }
+        }
+    }
 }
 
 .content-single {

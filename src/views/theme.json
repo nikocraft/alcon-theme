@@ -327,6 +327,69 @@
                             ]
                         }
                     ]
+                },
+                {
+                    "label": "Projects",
+                    "key": "projects",
+                    "type": "section",
+                    "settings": [
+                        {
+                            "label": "Layout",
+                            "key": "layout",
+                            "type": "section",
+                            "settings": [
+                                {
+                                    "label": "Single Page",
+                                    "key": "singlePage",
+                                    "default": "content-fullwidth",
+                                    "type": "string",
+                                    "meta": { "uiType": "contentLayoutSelector" }
+                                },
+                                {
+                                    "label": "Index Page",
+                                    "key": "indexPage",
+                                    "default": "content-fullwidth",
+                                    "type": "string",
+                                    "meta": { "uiType": "contentLayoutSelector" }
+                                }
+                            ]
+                        },
+                        {
+                            "label": "Settings",
+                            "key": "settings",
+                            "type": "section",
+                            "settings": [
+                                {
+                                    "label": "Show Title",
+                                    "key": "showTitle",
+                                    "default": true,
+                                    "type": "boolean",
+                                    "meta": { "uiType": "boolSelect" }
+                                },
+                                {
+                                    "label": "Show Meta Data",
+                                    "key": "showMetaData",
+                                    "default": true,
+                                    "type": "boolean",
+                                    "meta": { "uiType": "boolSelect" }
+                                },
+                                {
+                                    "label": "Show Author Bio",
+                                    "key": "showAuthorBio",
+                                    "default": true,
+                                    "type": "boolean",
+                                    "meta": { "uiType": "boolSelect" }
+                                },
+                                {
+                                    "label": "Show Comments",
+                                    "key": "showComments",
+                                    "default": true,
+                                    "type": "boolean",
+                                    "meta": { "uiType": "boolSelect" }
+                                }
+                            ]
+                        }
+                    ]
                 }
             ]
         },

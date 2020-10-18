@@ -65,6 +65,6 @@ return [
     | Relative path where Phoenix is, used to sync the themes while developing
     |
     */
-    'phoenix_path' => env('PHOENIX_PATH', '../laraone'),
+    'phoenix_path' => env('PHOENIX_PATH', '../alcon'),
 
 ];
