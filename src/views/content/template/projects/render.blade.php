@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @php
-    $templatePath = 'content/template/default';
+    $templatePath = 'content/template/projects';
 
     switch ($pageType) {
         case 'single':
@@ -17,6 +17,7 @@
 
 @section('content')
     @include('includes/header')
+
     @switch($contentLayout)
         @case("content-fullwidth")
             @include($templatePath.'/layouts/content-fullwidth')
@@ -31,5 +32,6 @@
             @include($templatePath.'/layouts/none')
             @break
     @endswitch
+
     @include('includes/footer')
 @endsection
