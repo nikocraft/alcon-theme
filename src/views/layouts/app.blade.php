@@ -6,9 +6,7 @@
 </head>
 <body>
     <div class="alcon-theme" id="app">
-        @include('includes/header')
         @yield('content')
-        @include('includes/footer')
     </div>
 
     <!-- Backend Routes -->
