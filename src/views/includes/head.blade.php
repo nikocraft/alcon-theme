@@ -52,9 +52,11 @@
 
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css">
 
+{{-- favicon --}}
+<link rel="shortcut icon" href="/favicon.ico" />
+
 <!-- Theme Stylesheet -->
 <link rel="stylesheet" href="{{mix('css/styles.css', 'themes/' . $themeFolder)}}">
-
 {{-- Custom Styles for Image Zoom --}}
 @include('includes/styles')
 

@@ -76,8 +76,39 @@
     }
 }
 
+.projects-hero {
+    height: 550px;
+    background-image: url("https://alconinstallation.se/uploads/2020/11/16/samhallsbyggare.jpg");
+    background-attachment: scroll;
+    background-position: center;
+    background-size: cover;
+    background-repeat: repeat;
+}
+
 .content-index {
     margin-bottom: 30px;
+
+    .project-taxonomy {
+        display: flex;
+        justify-content: center;
+        padding: 40px;
+
+        .project-term {
+            padding: 5px 15px;
+            color: #fff;
+            border-radius: 4px;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            line-height: 20px;
+            background-color: #647ab1;
+
+            &:hover {
+                background-color: #46557d;
+            }
+        }
+    }
+
+
     .posts {
         display: block;
         .post {
@@ -103,7 +134,7 @@
         .post {
             padding: 12px;
             min-width: 346px;
-            width: 380px;
+            width: 450px;
             @include post-mixin;
 
             .text-block p {
