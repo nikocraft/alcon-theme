@@ -7,7 +7,7 @@
         <div class="project-taxonomy">
             @foreach (get_taxonomy_terms(3, 'types') as $item)
                 <div class="project-term">
-                    <a class="post-term" href="/types/{{ lcfirst($item->slug) }}">{{ $item->name }}</a>
+                    <a class="post-term" href="/types/{{ lcfirst($item->slug) }}">{{ ucfirst($item->name) }}</a>
                 </div>
             @endforeach
         </div>

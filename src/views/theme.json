@@ -3,7 +3,7 @@
     "releases_url"      : "https://github.com/nikocraft/alcon-theme/raw/master/releases.json",
     "download_url"      : "https://github.com/nikocraft/alcon-theme/releases/download",
     "namespace"         : "se.alcon",
-    "version"           : "1.3.4",
+    "version"           : "1.3.5",
     "folder"            : "alcon",
     "tags"              : [ "minimalistic", "clean", "modern", "blog" ],
     "author"            : "Niko Craft",
